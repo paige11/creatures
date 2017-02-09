@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users, only: [:show]
-  resources :creatures, except: [:index]
+  root 'welcome#home'
 
-  root 'creatures#index'
+  devise_for :users
+  
+  resources :users, only: [:show]
+  resources :creatures, except: [:index, :show]
 end

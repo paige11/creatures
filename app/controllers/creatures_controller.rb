@@ -1,5 +1,5 @@
 class CreaturesController < ApplicationRecord
-  
+
   def index
   end
 

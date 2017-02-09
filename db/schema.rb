@@ -10,7 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209025443) do
+ActiveRecord::Schema.define(version: 20170209030722) do
+
+  create_table "bodies", force: :cascade do |t|
+    t.string "color"
+    t.string "shape"
+  end
+
+  create_table "creatures", force: :cascade do |t|
+    t.integer  "user"
+    t.string   "name"
+    t.integer  "body"
+    t.integer  "eyes"
+    t.integer  "nose"
+    t.integer  "mouth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "eyes", force: :cascade do |t|
+    t.string "color"
+  end
+
+  create_table "mouths", force: :cascade do |t|
+    t.string  "color"
+    t.string  "shape"
+    t.boolean "tooth"
+  end
+
+  create_table "noses", force: :cascade do |t|
+    t.string "color"
+    t.string "shape"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
